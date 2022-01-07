@@ -25,7 +25,7 @@ class TextBold extends StatelessWidget {
         color: colors,
         fontWeight: FontWeight.w600,
         fontStyle: FontStyle.normal,
-        fontFamily: 'Poppins',
+        fontFamily: 'Roboto-Medium',
         fontSize: size,
         height: height,
       ),

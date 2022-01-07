@@ -30,7 +30,7 @@ class TextNormal extends StatelessWidget {
         color: colors ?? AppColors.bPrimaryColor,
         fontWeight: fontWeight ?? FontWeight.w400,
         fontStyle: FontStyle.normal,
-        fontFamily: 'Poppins',
+        fontFamily: 'Roboto-Medium',
         fontSize: size ?? 17.sp,
         height: height ?? 1.3.h,
       ),
