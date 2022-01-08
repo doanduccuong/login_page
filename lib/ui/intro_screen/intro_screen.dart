@@ -115,7 +115,8 @@ class IntroScreen extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 23.h,left: 32.w,bottom: 30.h),
+                    padding:
+                        EdgeInsets.only(top: 23.h, left: 32.w, bottom: 30.h),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -135,15 +136,30 @@ class IntroScreen extends StatelessWidget {
                           alignment: Alignment.center,
                         ),
                         Padding(
-                          padding:  EdgeInsets.only(top: 18.h,bottom: 5.h),
-                          child: TextNormal(title: 'Iphone 12',size: 25.sp,height: 1.19.h,fontWeight: FontWeight.w700,),
+                          padding: EdgeInsets.only(top: 18.h, bottom: 5.h),
+                          child: TextNormal(
+                            title: 'Iphone 12',
+                            size: 25.sp,
+                            height: 1.19.h,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
-                        TextNormal(title: 'Súper. Mega. Rápido.',size: 11.sp,fontWeight: FontWeight.w400,height: 1.19.h,),
+                        TextNormal(
+                          title: 'Súper. Mega. Rápido.',
+                          size: 11.sp,
+                          fontWeight: FontWeight.w400,
+                          height: 1.19.h,
+                        ),
                         Spacer(),
                         InkWell(
                           child: Container(
                             alignment: Alignment.center,
-                            child: TextBold(title: 'Buy Now!', height: 1.12.h,colors: AppColors.iPrimaryColor, size: 11.sp,),
+                            child: TextBold(
+                              title: 'Buy Now!',
+                              height: 1.12.h,
+                              colors: AppColors.iPrimaryColor,
+                              size: 11.sp,
+                            ),
                             width: 98.w,
                             height: 23.h,
                             decoration: BoxDecoration(
@@ -165,7 +181,6 @@ class IntroScreen extends StatelessWidget {
                   ),
                   Flexible(
                     child: Container(
-                      
                       height: 199,
                       decoration: BoxDecoration(
                           image: const DecorationImage(
@@ -180,17 +195,27 @@ class IntroScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 5.h,),
+              SizedBox(
+                height: 5.h,
+              ),
               Row(
                 children: [
-                  TextBold(title: 'Best Seller', colors: AppColors.iPrimaryColor, size: 25.sp, height: 1.12.h),
+                  TextBold(
+                      title: 'Best Seller',
+                      colors: AppColors.iPrimaryColor,
+                      size: 25.sp,
+                      height: 1.12.h),
                   Spacer(),
-                  TextNormal(title: 'see more',fontWeight: FontWeight.w400,size: 15.sp,height: 1.19,colors: AppColors.dPrimaryColor,),
+                  TextNormal(
+                    title: 'see more',
+                    fontWeight: FontWeight.w400,
+                    size: 15.sp,
+                    height: 1.19,
+                    colors: AppColors.dPrimaryColor,
+                  ),
                 ],
               ),
-              Container(
-                child: ,
-              )
+              Container()
             ],
           ),
         ),
