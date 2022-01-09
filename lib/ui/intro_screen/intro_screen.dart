@@ -6,6 +6,9 @@ import 'package:login_page/config/text/text_bold.dart';
 import 'package:login_page/config/text/text_normal.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_page/ui/intro_screen/icon_filter/icon_filter.dart';
+import 'package:login_page/ui/intro_screen/product_field/product_field.dart';
+
+import 'bottom_bar/bottom_bar.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
@@ -18,6 +21,7 @@ class IntroScreen extends StatelessWidget {
         body: Padding(
           padding: EdgeInsets.only(left: 17.w, right: 33.w, top: 45.h),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -205,7 +209,7 @@ class IntroScreen extends StatelessWidget {
                       colors: AppColors.iPrimaryColor,
                       size: 25.sp,
                       height: 1.12.h),
-                  Spacer(),
+                  const Spacer(),
                   TextNormal(
                     title: 'see more',
                     fontWeight: FontWeight.w400,
@@ -215,11 +219,13 @@ class IntroScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Container()
+              ProducField()
             ],
           ),
         ),
+        bottomNavigationBar: const BottomBar(),
       ),
     );
   }
 }
+
