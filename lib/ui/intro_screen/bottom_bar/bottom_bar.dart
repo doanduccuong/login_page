@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_page/config/colors.dart';
-import 'package:login_page/config/constants.dart';
 import 'package:login_page/config/text/text_normal.dart';
 class BottomBar extends StatelessWidget {
   const BottomBar({
@@ -36,20 +35,6 @@ class BottomBar extends StatelessWidget {
           const Icon(Icons.person,size: 40,color: AppColors.bPrimaryColor,),
         ],
       ),
-    );
-  }
-}
-
-class IconsBottomBar extends StatelessWidget {
-  IconData iconData;
-
-  IconsBottomBar({Key? key, required this.iconData}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Icon(
-      iconData,
-      size: 30.sp,
-      color: AppColors.bPrimaryColor,
     );
   }
 }

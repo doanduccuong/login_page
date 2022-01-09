@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/config/colors.dart';
-import 'package:login_page/config/images.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_page/config/text/text_bold.dart';
 import 'package:login_page/config/text/text_normal.dart';
 
-Widget BuildCard() {
-  var supportingText = 'SamSung Galaxy S20 Ultra';
-  var priceText = "\$1,047";
-  var salePriceText = "\$1500";
-  var cardImage = const AssetImage(AppImage.imgSamSung);
-  return SizedBox(
-    height: 227.h,
-    width: 181.w,
-    child: Card(
+class BuildCard extends StatelessWidget {
+  BuildCard({Key? key, required this.salePriceText,required this.priceText,required this.supportingText,required this.cardImages}) : super(key: key);
+  String cardImages;
+  String supportingText;
+  String priceText;
+  String salePriceText;
+  @override
+  Widget build(BuildContext context) {
+    return Card(
       color: AppColors.bPrimaryColor,
       elevation: 4,
       child: Column(
         children: [
           Stack(
             children: [
-              Align(
-                alignment: Alignment.topRight,
+              Positioned(
+                top: 20.h,
                 child: Container(
                   height: 25.h,
                   width: 25.w,
@@ -39,10 +38,7 @@ Widget BuildCard() {
               SizedBox(
                 height: 88.h,
                 width: 168.w,
-                child: Ink.image(
-                  image: cardImage,
-                  fit: BoxFit.cover,
-                ),
+                child: Image.asset(cardImages,fit: BoxFit.fill,),
               )
             ],
           ),
@@ -51,17 +47,26 @@ Widget BuildCard() {
               title: supportingText,
               size: 10.sp,
               height: 1.19.h,
-              colors: AppColors.dPrimaryColor,
+              colors: AppColors.ePrimaryColor,
             ),
             subtitle: Row(
               children: [
-                TextBold(title: priceText, colors: AppColors.cPrimaryColor, size: 16.sp, height: 1.29.h),
-                TextNormal(title: salePriceText,colors: AppColors.lPrimaryColor,size: 10.sp,height: 1.29.h,)
+                TextBold(
+                    title: priceText,
+                    colors: AppColors.cPrimaryColor,
+                    size: 16.sp,
+                    height: 1.29.h),
+                TextNormal(
+                  title: salePriceText,
+                  colors: AppColors.lPrimaryColor,
+                  size: 10.sp,
+                  height: 1.29.h,
+                )
               ],
             ),
           ),
         ],
       ),
-    ),
-  );
+    );
+  }
 }
