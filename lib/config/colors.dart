@@ -12,5 +12,6 @@ class AppColors{
   static const Color iPrimaryColor=Color(0xFF010035);
   static const Color kPrimaryColor=Color(0xFF101010);
   static const Color lPrimaryColor=Color(0xFFCCCCCC);
+  static const Color mPrimaryColor=Color(0xFF01003580);
 
 }

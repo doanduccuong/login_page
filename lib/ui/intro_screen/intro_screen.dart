@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login_page/config/colors.dart';
-import 'package:login_page/config/icon.dart';
 import 'package:login_page/config/images.dart';
 import 'package:login_page/config/text/text_bold.dart';
 import 'package:login_page/config/text/text_normal.dart';
@@ -17,9 +16,10 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.hPrimaryColor,
         body: Padding(
-          padding: EdgeInsets.only(left: 17.w, right: 33.w, top: 45.h),
+          padding: EdgeInsets.only(left: 25.w,right: 10.w, top: 45.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -60,32 +60,28 @@ class IntroScreen extends StatelessWidget {
                     size: 15.sp,
                     height: 1.27.h,
                     colors: AppColors.dPrimaryColor,
-                  )
+                  ),
+
                 ],
               ),
               const IconFilter(),
               Row(
                 children: [
+                  // only need texform field
                   Container(
-                    padding: EdgeInsets.only(left: 15.w, right: 50.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.bPrimaryColor,
-                      borderRadius: BorderRadius.circular(50.r),
-                    ),
                     width: 300.w,
                     height: 34.h,
-                    child: SizedBox(
-                      height: 15.h,
-                      child: TextFormField(
-                        autofocus: true,
-                        decoration: const InputDecoration(
-                          icon: Icon(
-                            AppIcon.iconSearch,
-                            color: AppColors.fPrimaryColor,
-                          ),
-                          fillColor: AppColors.iPrimaryColor,
-                          hintText: 'Search',
-                        ),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(50.sp)
+                    ),
+                    child: TextFormField(
+                      autocorrect: true,
+                      decoration:   InputDecoration(
+                        prefixIcon: const Icon(Icons.search,color: AppColors.fPrimaryColor,size: 20,),
+                        border: InputBorder.none,
+                        hintStyle: TextStyle(color: AppColors.iPrimaryColor,fontSize: 12.sp,fontWeight: FontWeight.w400,),
+                        hintText: 'Search',
                       ),
                     ),
                   ),

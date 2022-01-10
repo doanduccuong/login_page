@@ -4,47 +4,69 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:login_page/config/text/text_bold.dart';
 import 'package:login_page/config/text/text_normal.dart';
 
-class BuildCard extends StatelessWidget {
-  BuildCard({Key? key, required this.salePriceText,required this.priceText,required this.supportingText,required this.cardImages}) : super(key: key);
+class BuildCard extends StatefulWidget {
+  BuildCard(
+      {Key? key,
+      required this.salePriceText,
+      required this.priceText,
+      required this.supportingText,
+      required this.cardImages})
+      : super(key: key);
   String cardImages;
   String supportingText;
   String priceText;
   String salePriceText;
+
+  @override
+  State<BuildCard> createState() => _BuildCardState();
+}
+
+class _BuildCardState extends State<BuildCard> {
+  bool check = true;
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Container(
+      width: 181.w,
+      height: 227.h,
       color: AppColors.bPrimaryColor,
-      elevation: 4,
       child: Column(
         children: [
           Stack(
             children: [
-              Positioned(
-                top: 20.h,
-                child: Container(
-                  height: 25.h,
-                  width: 25.w,
-                  decoration: const BoxDecoration(
-                    color: AppColors.bPrimaryColor,
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Icons.favorite_border,
-                    size: 15.sp,
-                    color: AppColors.fPrimaryColor,
-                  ),
-                ),
-              ),
               SizedBox(
                 height: 88.h,
                 width: 168.w,
-                child: Image.asset(cardImages,fit: BoxFit.fill,),
+                child: Image.asset(
+                  widget.cardImages,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    check = !check;
+                  });
+                },
+                child: Padding(
+                  padding: EdgeInsets.only(left: 125.w, top: 10),
+                  child: Container(
+                    height: 25.h,
+                    width: 25.h,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle, color: Colors.white),
+                    child: Icon(
+                      check ? Icons.favorite_outline_rounded : Icons.favorite,
+                      size: 15,
+                      color: AppColors.fPrimaryColor,
+                    ),
+                  ),
+                ),
               )
             ],
           ),
           ListTile(
             title: TextBold(
-              title: supportingText,
+              title: widget.supportingText,
               size: 10.sp,
               height: 1.19.h,
               colors: AppColors.ePrimaryColor,
@@ -52,12 +74,12 @@ class BuildCard extends StatelessWidget {
             subtitle: Row(
               children: [
                 TextBold(
-                    title: priceText,
+                    title: widget.priceText,
                     colors: AppColors.cPrimaryColor,
                     size: 16.sp,
                     height: 1.29.h),
                 TextNormal(
-                  title: salePriceText,
+                  title: widget.salePriceText,
                   colors: AppColors.lPrimaryColor,
                   size: 10.sp,
                   height: 1.29.h,

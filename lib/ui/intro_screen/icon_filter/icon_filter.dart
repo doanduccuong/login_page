@@ -16,13 +16,16 @@ class _IconFilter extends State<IconFilter> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.symmetric(vertical: 15.h),
       height: 86.h,
       child: ListView.builder(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         itemCount: Constants.iconDatas.length,
         itemBuilder: (context, index) {
-          return InkWell(
+          return Padding(
+            padding:  EdgeInsets.only(right: 15.w),
+            child: InkWell(
               onTap: () {
                 setState(
                   () {
@@ -33,6 +36,7 @@ class _IconFilter extends State<IconFilter> {
               child: Column(
                 children: [
                   Container(
+                    //margin: EdgeInsets.symmetric(horizontal: 15.w),
                     child: Center(
                       child: Icon(
                         Constants.iconDatas[index].iconData,
@@ -60,7 +64,9 @@ class _IconFilter extends State<IconFilter> {
                         : Colors.black,
                   ),
                 ],
-              ));
+              ),
+            ),
+          );
         },
       ),
     );
