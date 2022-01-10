@@ -19,7 +19,7 @@ class IntroScreen extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         backgroundColor: AppColors.hPrimaryColor,
         body: Padding(
-          padding: EdgeInsets.only(left: 12.w,right: 10.w, top: 45.h),
+          padding: EdgeInsets.only(left: 13.w,right: 10.w, top: 45.h),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
